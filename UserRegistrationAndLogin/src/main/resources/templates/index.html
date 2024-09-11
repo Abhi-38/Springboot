@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light background color */
+            font-family: Arial, sans-serif; /* Modern font */
+            background-image: url('https://mrwallpaper.com/images/hd/lake-view-with-vibrant-blue-water-x8ym0b8jrfgeqla4.jpg'); /* Replace with your image URL */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the image */
+            background-attachment: fixed; /* Keep the background fixed */
+        }
+
+        .container {
+            margin-top: 50px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8); /* White background with slight transparency */
+            padding: 30px;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        h1 {
+            color: #343a40; /* Dark heading color */
+            margin-bottom: 30px; /* Space below the heading */
+        }
+
+        h3 {
+            margin: 15px 0; /* Space around each link */
+            color: #007bff; /* Link color */
+        }
+
+        h3 a {
+            text-decoration: none;
+            color: #007bff; /* Link color */
+            font-weight: 500; /* Slightly bold */
+            transition: color 0.3s ease; /* Smooth color transition */
+        }
+
+        h3 a:hover {
+            color: #0056b3; /* Darker link color on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to the Registration Page</h1>
+        <div>
+            <h3><a th:href="@{/list_users}">List All Users</a></h3>
+            <h3><a th:href="@{/register}">Register</a></h3>
+            <h3><a th:href="@{/login}">Log In</a></h3>
+        </div>
+    </div>
+</body>
+
+</html>

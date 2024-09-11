@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <style>
+        body {
+            background-image: url('https://plus.unsplash.com/premium_photo-1675198764382-94d5c093df30?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2VyZW5lfGVufDB8fDB8fHww'); /* Replace with your image URL */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the image */
+            background-attachment: fixed; /* Keep the background fixed */
+            background-color: #e9ecef; /* Fallback color */
+            font-family: Arial, sans-serif; /* Modern font */
+        }
+
+        .container {
+           margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            backdrop-filter: blur(10px); /* Adds a slight blur effect behind the container */
+        }
+
+        h1 {
+            color: #343a40;
+            margin-bottom: 30px; /* Space below the heading */
+        }
+
+        .table-container {
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+
+        .table {
+            border-radius: 8px;
+            border: 1px solid #dee2e6; /* Light border for table */
+        }
+
+        .thead-dark {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+
+        th, td {
+            text-align: center;
+            vertical-align: middle; /* Center content vertically */
+        }
+
+        .btn-sign-out {
+            margin-top: 20px;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+        .table th,
+        .table td {
+            border: 1px solid #dee2e6; /* Light border for cells */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center">
+        <h1>List of All Users</h1>
+        <div class="table-container">
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                <tr>
+                    <th>User Id</th>
+                    <th>Email</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user : ${listUsers}">
+                    <td th:text="${user.id}">User ID</td>
+                    <td th:text="${user.email}">Email</td>
+                    <td th:text="${user.firstName}">First Name</td>
+                    <td th:text="${user.lastName}">Last Name</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="btn-sign-out">
+            <form th:action="@{/logout}" method="post">
+                <button type="submit" class="btn btn-danger">Sign out</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
+
